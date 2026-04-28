@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irvan Maulana · Personality Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --w:#fafaf8;--ow:#f0efeb;--gd:#2d6a4f;--gm:#40916c;--gl:#74c69d;
+  --gp:#d8f3dc;--gg:#edf7f1;--ink:#141917;--is:#2e3830;--mu:#7a9484;--br:#d8e5dc;
+  --card-shadow:0 2px 16px rgba(45,106,79,.06);
+}
+[data-theme="dark"]{
+  --w:#0d1210;--ow:#141c16;--gd:#7ecba0;--gm:#5bb88a;--gl:#9ddcb8;
+  --gp:#1a3526;--gg:#111d16;--ink:#dff0e6;--is:#aeceba;--mu:#5e8a6e;--br:#1e3028;
+  --card-shadow:0 2px 20px rgba(0,0,0,.4);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--w);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;transition:background .4s ease,color .4s ease}
+
+/* ── NOISE TEXTURE ── */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.35}
+
+/* ── FLOATING AMBIENT ORBS (light mode) ── */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(circle 380px at 90% 10%, rgba(116,198,157,.09) 0%, transparent 70%),
+    radial-gradient(circle 300px at 5% 85%, rgba(45,106,79,.06) 0%, transparent 70%),
+    radial-gradient(circle 200px at 50% 50%, rgba(64,145,108,.03) 0%, transparent 70%);
+  transition:background .5s}
+[data-theme="dark"] body::after{
+  background:
+    radial-gradient(circle 420px at 88% 8%, rgba(93,184,138,.13) 0%, transparent 65%),
+    radial-gradient(circle 320px at 4% 88%, rgba(30,80,55,.25) 0%, transparent 65%),
+    radial-gradient(circle 250px at 55% 45%, rgba(94,138,110,.07) 0%, transparent 65%);
+}
+
+/* ── DECORATIVE DOT GRID ── */
+.deco-grid{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle,rgba(45,106,79,.12) 1px,transparent 1px);
+  background-size:28px 28px;opacity:.4;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+[data-theme="dark"] .deco-grid{background-image:radial-gradient(circle,rgba(93,184,138,.18) 1px,transparent 1px);opacity:.35}
+
+/* ── FLOATING DECORATIVE LINES ── */
+.deco-line{position:absolute;pointer-events:none;z-index:0}
+.deco-line svg{display:block}
+
+/* ── SECTION ACCENT ── */
+.sec-accent{display:flex;align-items:center;gap:.7rem;margin-bottom:2rem}
+.sec-accent-line{flex:1;height:1px;background:linear-gradient(to right,var(--gl),transparent);opacity:.5}
+.sec-accent-dot{width:5px;height:5px;border-radius:50%;background:var(--gm);flex-shrink:0}
+
+/* ── HERO ── */
+.hero{min-height:100svh;display:grid;place-items:center;position:relative;padding:4rem 2rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 65% 55% at 80% 15%,rgba(116,198,157,.16) 0%,transparent 60%),
+    radial-gradient(ellipse 45% 60% at 10% 80%,rgba(45,106,79,.09) 0%,transparent 60%),
+    radial-gradient(ellipse 30% 30% at 50% 50%,rgba(64,145,108,.04) 0%,transparent 60%)}
+[data-theme="dark"] .hero-bg{
+  background:
+    radial-gradient(ellipse 65% 55% at 80% 15%,rgba(93,184,138,.18) 0%,transparent 60%),
+    radial-gradient(ellipse 45% 60% at 10% 80%,rgba(30,80,55,.3) 0%,transparent 60%)}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(45,106,79,.1);top:50%;left:50%;transform:translate(-50%,-50%);animation:rp 6s ease-in-out infinite}
+.ring:nth-child(2){width:540px;height:540px;animation-delay:.7s;border-color:rgba(45,106,79,.12)}
+.ring:nth-child(3){width:370px;height:370px;animation-delay:1.4s;border-color:rgba(45,106,79,.17)}
+.ring:nth-child(4){width:210px;height:210px;animation-delay:2.1s;border-color:rgba(45,106,79,.24)}
+[data-theme="dark"] .ring{border-color:rgba(93,184,138,.15)}
+[data-theme="dark"] .ring:nth-child(2){border-color:rgba(93,184,138,.2)}
+[data-theme="dark"] .ring:nth-child(3){border-color:rgba(93,184,138,.27)}
+[data-theme="dark"] .ring:nth-child(4){border-color:rgba(93,184,138,.35)}
+@keyframes rp{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.02)}}
+
+.hero-content{position:relative;z-index:1;text-align:center;max-width:580px}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(.9rem,2.5vw,1.1rem);font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--gm);margin-bottom:.6rem;opacity:0;animation:fu .8s .1s forwards}
+.hero-label{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mu);margin-bottom:1.3rem;opacity:0;animation:fu .8s .22s forwards}
+.hero-mbti{font-family:'Cormorant Garamond',serif;font-size:clamp(4.5rem,16vw,9rem);font-weight:500;letter-spacing:.1em;line-height:1;color:var(--ink);margin-bottom:.8rem;opacity:0;animation:fu .9s .35s forwards}
+.hero-mbti span{color:var(--gd)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.8vw,1.4rem);font-weight:500;font-style:italic;color:var(--is);margin-bottom:1.5rem;opacity:0;animation:fu .9s .5s forwards}
+.hero-desc{font-size:.88rem;font-weight:400;color:var(--mu);max-width:410px;margin:0 auto 1.5rem;opacity:0;animation:fu .9s .62s forwards}
+.hero-chips{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;opacity:0;animation:fu .9s .74s forwards}
+.chip{font-size:.69rem;font-weight:500;padding:.28rem .85rem;border-radius:99px;background:rgba(45,106,79,.07);color:var(--gd);border:1px solid var(--gp)}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.45rem;color:var(--mu);font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;opacity:0;animation:fu .9s .9s forwards}
+.scroll-line{width:1px;height:34px;background:linear-gradient(to bottom,var(--gm),transparent);animation:sb 2s ease-in-out infinite}
+@keyframes sb{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.3)}}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── LAYOUT ── */
+section{padding:4.5rem 2rem;max-width:900px;margin:0 auto}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--br),transparent);transition:background .4s}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── SECTION HEADER ── */
+.sec-lbl{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gm);margin-bottom:.4rem;display:flex;align-items:center;gap:.45rem;font-weight:500}
+.sec-lbl svg{flex-shrink:0;opacity:.8}
+.sec-ttl{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:600;color:var(--ink);margin-bottom:2.2rem}
+
+/* ── INSIGHT ── */
+.insight{margin-top:1.8rem;padding:1.5rem 1.7rem;border-left:2px solid var(--gl);background:var(--gg);border-radius:0 12px 12px 0;transition:background .4s,border-color .4s}
+.iq{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:600;color:var(--gd);margin-bottom:.55rem;display:block}
+.insight p{font-size:.84rem;font-weight:400;color:var(--is);line-height:1.85}
+.insight p+p{margin-top:.65rem}
+
+/* ── CARD GRIDS ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+.card{padding:1.4rem;border:1px solid var(--br);border-radius:13px;background:var(--w);box-shadow:var(--card-shadow);transition:background .2s,transform .2s,border-color .4s,box-shadow .2s}
+.card:hover{background:var(--gg);transform:translateY(-2px);box-shadow:0 6px 24px rgba(45,106,79,.1)}
+[data-theme="dark"] .card{background:var(--ow)}
+[data-theme="dark"] .card:hover{background:var(--gg)}
+.clbl{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gm);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;font-weight:600}
+.clbl svg{opacity:.85;flex-shrink:0}
+.ctxt{font-size:.81rem;font-weight:400;color:var(--is);line-height:1.78}
+
+/* ── BIG FIVE BLOCKS ── */
+.bf-block{border:1px solid var(--br);border-radius:16px;padding:1.6rem;background:var(--w);margin-bottom:1.2rem;box-shadow:var(--card-shadow);transition:border-color .4s,background .4s,box-shadow .3s}
+.bf-block:hover{box-shadow:0 6px 28px rgba(45,106,79,.1)}
+.bf-block:last-of-type{margin-bottom:0}
+[data-theme="dark"] .bf-block{background:var(--ow)}
+.bf-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+.bf-header-left{display:flex;align-items:center;gap:.9rem}
+.bf-letter{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;line-height:1;flex-shrink:0}
+.bf-main-name{display:block;font-size:.9rem;font-weight:600;color:var(--ink)}
+.bf-main-sub{font-size:.66rem;color:var(--mu);font-weight:400}
+.bf-total-wrap{text-align:right;flex-shrink:0}
+.bf-total{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--ink);line-height:1}
+.bf-total-max{font-size:.7rem;color:var(--mu);font-weight:400}
+.bf-main-track{height:6px;background:var(--ow);border-radius:99px;overflow:hidden;border:1px solid var(--br);margin-bottom:1.2rem}
+.bf-facets{display:grid;grid-template-columns:1fr 1fr;gap:.55rem .8rem;margin-bottom:1.1rem}
+.bf-facet{display:grid;grid-template-columns:1fr auto;align-items:center;gap:.5rem;row-gap:.2rem}
+.bf-fname{font-size:.72rem;color:var(--is);font-weight:500;grid-column:1}
+.bf-fval{font-size:.72rem;font-weight:600;color:var(--is);text-align:right;grid-column:2;grid-row:1/3}
+.bf-ftrack{height:4px;background:var(--ow);border-radius:99px;overflow:hidden;grid-column:1;grid-row:2}
+.bf-ffill{height:100%;border-radius:99px;background:var(--fc,var(--gm));width:0%;transition:width 1.1s cubic-bezier(.16,1,.3,1)}
+.bf-insight{font-size:.8rem;color:var(--is);line-height:1.78;padding-top:1rem;border-top:1px solid var(--br);font-weight:400}
+@media(max-width:520px){.bf-facets{grid-template-columns:1fr}}
+
+/* ── BIG FIVE (old kept for other uses) ── */
+.bf-grid{display:flex;flex-direction:column;gap:1.2rem}
+.bfrow{display:grid;grid-template-columns:165px 1fr 46px;align-items:center;gap:1rem}
+.bfn{font-size:.81rem;color:var(--is);font-weight:500}
+.bfs{font-size:.65rem;color:var(--mu);display:block;font-weight:400}
+.track{height:5px;background:var(--ow);border-radius:99px;overflow:hidden;border:1px solid var(--br)}
+.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gm),var(--gl));width:0%;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.bfv{font-size:.76rem;color:var(--gd);font-weight:600;text-align:right}
+
+/* ── DISC ── */
+.disc-g{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.dc{background:var(--w);border:1px solid var(--br);border-radius:15px;padding:1.6rem;position:relative;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .3s,box-shadow .3s,background .4s,border-color .4s;cursor:default}
+.dc::after{content:'';position:absolute;bottom:0;right:0;width:65px;height:65px;background:var(--gg);border-radius:50% 0 0 0;transition:all .3s}
+.dc:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(45,106,79,.13)}
+.dc:hover::after{width:105px;height:105px;background:var(--gp)}
+[data-theme="dark"] .dc{background:var(--ow)}
+[data-theme="dark"] .dc:hover{box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.dc-letter{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:500;color:var(--gd);line-height:1;margin-bottom:.25rem}
+.dc-name{font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--is);margin-bottom:.85rem}
+.dc-track{height:4px;background:var(--ow);border-radius:99px;overflow:hidden}
+.dc-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gd),var(--gl));width:0%;transition:width 1.3s cubic-bezier(.16,1,.3,1)}
+.dc-pct{font-size:.67rem;color:var(--mu);margin-top:.28rem;font-weight:400}
+.dc-desc{font-size:.78rem;color:var(--mu);line-height:1.68;position:relative;z-index:1;margin-top:.45rem;font-weight:400}
+.dc-elab{font-size:.78rem;color:var(--is);line-height:1.72;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--br);position:relative;z-index:1;font-weight:400}
+
+/* ── INSIGHT ── */
+.insight{margin-top:1.8rem;padding:1.6rem 1.8rem;border-left:3px solid var(--gm);background:var(--gg);border-radius:0 14px 14px 0;box-shadow:inset 4px 0 0 var(--gl);transition:background .4s,border-color .4s}
+[data-theme="dark"] .insight{background:var(--gg);border-left-color:var(--gm);box-shadow:inset 4px 0 0 rgba(93,184,138,.3)}
+.iq{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:600;color:var(--gd);margin-bottom:.55rem;display:block}
+.insight p{font-size:.84rem;font-weight:400;color:var(--is);line-height:1.85}
+.insight p+p{margin-top:.65rem}
+.radar-wrap{display:grid;grid-template-columns:250px 1fr;gap:2.2rem;align-items:center}
+.r-grid{fill:none;stroke:var(--br);stroke-width:1}
+.r-area{fill:rgba(64,145,108,.1);stroke:var(--gm);stroke-width:1.8;stroke-linejoin:round}
+.r-dot{fill:var(--gd)}
+.r-lbl{font-family:'DM Sans',sans-serif;font-size:10px;fill:var(--is);font-weight:500}
+.r-axis{stroke:var(--br);stroke-width:1}
+.leg{margin-bottom:.5rem;display:flex;align-items:center;gap:.65rem;padding:.6rem .85rem;border-radius:9px;border:1px solid var(--br);transition:background .2s,border-color .4s}
+.leg:last-child{margin-bottom:0}
+.leg:hover{background:var(--gg)}
+.leg-dot{width:6px;height:6px;border-radius:50%;background:var(--gm);flex-shrink:0}
+.leg-dot.lo{background:var(--mu)}
+.leg-s{display:block;font-size:.78rem;font-weight:600;color:var(--is)}
+.leg-d{font-size:.69rem;color:var(--mu);font-weight:400}
+
+/* ── RIASEC ── */
+.rc-grid{margin-top:2.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+.rc{padding:1.15rem;border:1px solid var(--br);border-radius:11px;background:var(--w);transition:background .22s,transform .22s,border-color .4s}
+.rc:hover{background:var(--gg);transform:translateY(-2px)}
+.rc-i{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:500;color:var(--gl);line-height:1;margin-bottom:.2rem}
+.rc-i.hi{color:var(--gd)}
+.rc-l{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--is);margin-bottom:.35rem}
+.rc-t{font-size:.76rem;color:var(--mu);line-height:1.66;font-weight:400}
+
+/* ── ENNEAGRAM ── */
+.en-g{display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center}
+.en-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;width:145px;height:145px;border-radius:50%;border:1.5px solid var(--gl);background:radial-gradient(ellipse at center,var(--gg),var(--w));position:relative;flex-shrink:0;transition:background .4s,border-color .4s}
+.en-orbit{position:absolute;inset:-13px;border-radius:50%;border:1px dashed rgba(64,145,108,.2);animation:spin 28s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.en-n{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:500;line-height:1;color:var(--gd)}
+.en-w{font-size:.7rem;color:var(--mu);font-weight:500}
+.en-ttl{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:600;color:var(--ink);margin-bottom:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:.9rem}
+.tag{font-size:.68rem;font-weight:500;padding:.25rem .72rem;border-radius:99px;background:var(--gg);color:var(--gd);border:1px solid var(--gp);transition:background .4s,border-color .4s}
+.en-d{font-size:.83rem;color:var(--mu);line-height:1.78;font-weight:400}
+
+/* ── SUMMARY ── */
+.sum-portrait{margin-bottom:2.2rem}
+.sum-portrait p{font-size:.9rem;color:var(--is);line-height:1.9;font-weight:400}
+.sum-portrait p+p{margin-top:.9rem}
+
+.sum-matrix{display:flex;flex-direction:column;gap:.55rem;margin-bottom:2.5rem;padding:1.5rem;border:1px solid var(--br);border-radius:14px;background:var(--w);box-shadow:var(--card-shadow);transition:background .4s,border-color .4s}
+[data-theme="dark"] .sum-matrix{background:var(--ow)}
+.sum-matrix-row{display:grid;grid-template-columns:90px 110px 1fr;align-items:center;gap:.8rem;padding:.5rem 0;border-bottom:1px solid var(--br)}
+.sum-matrix-row:last-child{border-bottom:none;padding-bottom:0}
+.sum-matrix-key{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);font-weight:600}
+.sum-matrix-val{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gd)}
+.sum-matrix-desc{font-size:.78rem;color:var(--is);font-weight:400}
+
+.sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.sw-block{border-radius:16px;padding:1.8rem;border:1px solid var(--br);box-shadow:var(--card-shadow);transition:background .4s,border-color .4s}
+.sw-strength{background:var(--gg);border-color:rgba(64,145,108,.25)}
+.sw-weakness{background:var(--w)}
+[data-theme="dark"] .sw-strength{background:rgba(30,52,38,.6);border-color:rgba(93,184,138,.2)}
+[data-theme="dark"] .sw-weakness{background:var(--ow)}
+.sw-header{display:flex;align-items:center;gap:.6rem;margin-bottom:1.3rem;color:var(--gd);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.sw-weakness .sw-header{color:var(--mu)}
+.sw-list{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.sw-list li{padding-left:.9rem;border-left:2px solid var(--gl)}
+.sw-weakness .sw-list li{border-left-color:var(--br)}
+.sw-item-title{display:block;font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.sw-item-desc{font-size:.76rem;color:var(--mu);line-height:1.7;font-weight:400}
+
+@media(max-width:640px){
+  .sw-grid{grid-template-columns:1fr}
+  .sum-matrix-row{grid-template-columns:80px 90px 1fr;gap:.5rem}
+}
+@media(max-width:420px){
+  .sum-matrix-row{grid-template-columns:1fr;gap:.2rem}
+  .sum-matrix-val{font-size:.95rem}
+}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--br);color:var(--mu);font-size:.71rem;letter-spacing:.07em;transition:border-color .4s,color .4s;font-weight:400}
+.fm{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gm);display:block;margin-bottom:.5rem;font-style:italic}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:500;color:var(--mu);display:block;margin-bottom:.3rem;letter-spacing:.15em;text-transform:uppercase}
+.footer-sub{margin-bottom:1.2rem;display:block}
+
+/* ── TOGGLES ── */
+.toggles{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-top:.4rem}
+.tog-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .95rem;border-radius:99px;border:1px solid var(--br);background:transparent;color:var(--mu);font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .25s ease;font-weight:500}
+.tog-btn:hover{background:var(--gg);color:var(--gm);border-color:var(--gl)}
+.tog-track{width:28px;height:16px;border-radius:99px;background:var(--br);position:relative;transition:background .3s;flex-shrink:0}
+.tog-track::after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:var(--mu);transition:transform .28s,background .3s}
+.tog-btn.active .tog-track{background:var(--gm)}
+.tog-btn.active .tog-track::after{transform:translateX(12px);background:var(--w)}
+.tog-icon{font-size:.8rem;line-height:1;transition:transform .35s}
+.tog-btn.active .tog-icon{transform:rotate(180deg)}
+.lang-flag{font-size:.85rem;line-height:1}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  .bfrow{grid-template-columns:115px 1fr 34px}
+  .disc-g,.g2{grid-template-columns:1fr}
+  .radar-wrap{grid-template-columns:1fr}
+  .g3,.rc-grid{grid-template-columns:1fr 1fr}
+  .en-g{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .tags{justify-content:center}
+  .bf-extra .card:last-child{grid-column:auto}
+}
+@media(max-width:400px){.g3,.rc-grid{grid-template-columns:1fr}}
+[data-t]{transition:opacity .18s ease}
+[data-t].swapping{opacity:0}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="ring" style="width:600px;height:600px"></div>
+  <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+  <div class="hero-content">
+    <p class="hero-name">Irvan Maulana</p>
+    <p class="hero-label" data-t="hero-label">Personality Profile</p>
+    <div class="hero-mbti">IN<span>FJ</span><span style="font-size:clamp(2rem,6vw,3.5rem);color:var(--mu);vertical-align:super;font-weight:400">-T</span></div>
+    <p class="hero-title" data-t="hero-title">The Advocate — Rare, Purposeful, Visionary</p>
+    <p class="hero-desc" data-t="hero-desc">A rich inner world driven by intuition and empathy — always searching for meaning beneath the surface of everything.</p>
+    <div class="hero-chips">
+      <span class="chip" data-t="chip-i">Introverted</span>
+      <span class="chip" data-t="chip-n">Intuitive</span>
+      <span class="chip" data-t="chip-f">Feeling</span>
+      <span class="chip" data-t="chip-j">Judging</span>
+      <span class="chip" style="background:rgba(45,106,79,.03);color:var(--mu);border-color:var(--br)" data-t="chip-t">Turbulent</span>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span data-t="scroll">scroll down</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ MBTI ══════════════ -->
+<section>
+  <p class="sec-lbl reveal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+    <span data-t="mbti-lbl">MBTI · Myers-Briggs</span>
+  </p>
+  <h2 class="sec-ttl reveal" data-t="mbti-ttl">The Advocate</h2>
+  <div class="g2 reveal">
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span data-t="mbti-i-lbl">Introversion (I)</span></p>
+      <p class="ctxt" data-t="mbti-i-txt">Energy comes from within. Social interactions feel meaningful but draining — solitude is needed to recharge. Prefers deep conversation over small talk, and always processes thoughts internally before speaking.</p>
+    </div>
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg><span data-t="mbti-n-lbl">Intuition (N)</span></p>
+      <p class="ctxt" data-t="mbti-n-txt">Perceives the world through patterns, symbols, and possibilities — not raw facts. Future-oriented, visionary, and always drawn to big ideas and untapped potential. Asks "why?" far more often than "what?"</p>
+    </div>
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg><span data-t="mbti-f-lbl">Feeling (F)</span></p>
+      <p class="ctxt" data-t="mbti-f-txt">Decisions are guided by values, empathy, and human impact. Highly attuned to emotional currents — often sensing how people feel before it's spoken. Authenticity and ethics are non-negotiable anchors.</p>
+    </div>
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-t="mbti-j-lbl">Judging (J)</span></p>
+      <p class="ctxt" data-t="mbti-j-txt">Thrives with structure, closure, and planning. Grows with clear goals. Not just a dreamer — a committed executor. The J transforms abstract vision into deliberate action, and idealism into tangible impact.</p>
+    </div>
+  </div>
+  <!-- Turbulent card -->
+  <div class="card reveal" style="margin-top:1rem;border-color:var(--gl)">
+    <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span data-t="mbti-t-lbl">Turbulent Variant (-T)</span></p>
+    <p class="ctxt" data-t="mbti-t-txt">The -T suffix marks a more self-critical, perfectionist, and stress-sensitive variant of INFJ. Turbulent INFJs hold themselves to exceptionally high standards, are more prone to self-doubt, and feel the weight of unmet expectations deeply. This inner pressure, while challenging, is also the engine behind their relentless drive to grow and improve.</p>
+  </div>
+  <div class="insight reveal">
+    <span class="iq" data-t="mbti-iq">"The rarest of types — only ~1.5% of the world's population."</span>
+    <p data-t="mbti-p1">INFJs are unique in combining deep empathy with strategic thinking. They don't simply feel the world — they analyze it, build frameworks for it, and dedicate themselves to improving it. The core tension of an INFJ is being a deeply private person with a burning desire to make a public difference.</p>
+    <p data-t="mbti-p2">At their best: inspiring mentors, visionary writers, ethical leaders. At their edge: prone to burnout from over-giving, perfectionism, and the quiet frustration of feeling perpetually misunderstood.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ BIG FIVE ══════════════ -->
+<section>
+  <p class="sec-lbl reveal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <span data-t="bf-lbl">Big Five · OCEAN</span>
+  </p>
+  <h2 class="sec-ttl reveal" data-t="bf-ttl">Personality Dimensions</h2>
+
+  <!-- Neuroticism -->
+  <div class="bf-block reveal">
+    <div class="bf-header">
+      <div class="bf-header-left">
+        <span class="bf-letter" style="color:#9b72cf">N</span>
+        <div>
+          <span class="bf-main-name" data-t="bf-n-name">Neuroticism</span>
+          <span class="bf-main-sub" data-t="bf-n-sub">Emotional Sensitivity</span>
+        </div>
+      </div>
+      <div class="bf-total-wrap">
+        <span class="bf-total">78</span>
+        <span class="bf-total-max">/120</span>
+      </div>
+    </div>
+    <div class="bf-main-track"><div class="fill" data-v="65" style="background:linear-gradient(90deg,#9b72cf,#c4a0e8)"></div></div>
+    <div class="bf-facets">
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-n1">Anxiety</span><div class="bf-ftrack"><div class="bf-ffill" data-v="80" style="--fc:#9b72cf"></div></div><span class="bf-fval">16</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-n2">Anger</span><div class="bf-ftrack"><div class="bf-ffill" data-v="65" style="--fc:#9b72cf"></div></div><span class="bf-fval">13</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-n3">Depression</span><div class="bf-ftrack"><div class="bf-ffill" data-v="50" style="--fc:#9b72cf"></div></div><span class="bf-fval">10</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-n4">Self-Consciousness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="70" style="--fc:#9b72cf"></div></div><span class="bf-fval">14</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-n5">Immoderation</span><div class="bf-ftrack"><div class="bf-ffill" data-v="55" style="--fc:#9b72cf"></div></div><span class="bf-fval">11</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-n6">Vulnerability</span><div class="bf-ftrack"><div class="bf-ffill" data-v="70" style="--fc:#9b72cf"></div></div><span class="bf-fval">14</span></div>
+    </div>
+    <p class="bf-insight" data-t="bf-n-ctxt">Anxiety (16), Self-Consciousness (14), and Vulnerability (14) dominate — painting a picture of someone who feels the texture of life intensely. High Neuroticism is the shadow side of deep sensitivity: the same wiring that enables empathy and creativity also amplifies stress, self-criticism, and emotional turbulence. Consistent with the INFJ-T variant.</p>
+  </div>
+
+  <!-- Extraversion -->
+  <div class="bf-block reveal">
+    <div class="bf-header">
+      <div class="bf-header-left">
+        <span class="bf-letter" style="color:#3b7dd8">E</span>
+        <div>
+          <span class="bf-main-name" data-t="bf-e-name">Extraversion</span>
+          <span class="bf-main-sub" data-t="bf-e-sub">Social Energy</span>
+        </div>
+      </div>
+      <div class="bf-total-wrap">
+        <span class="bf-total">61</span>
+        <span class="bf-total-max">/120</span>
+      </div>
+    </div>
+    <div class="bf-main-track"><div class="fill" data-v="51" style="background:linear-gradient(90deg,#3b7dd8,#74aff0)"></div></div>
+    <div class="bf-facets">
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-e1">Friendliness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="35" style="--fc:#3b7dd8"></div></div><span class="bf-fval">7</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-e2">Gregariousness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="45" style="--fc:#3b7dd8"></div></div><span class="bf-fval">9</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-e3">Assertiveness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="70" style="--fc:#3b7dd8"></div></div><span class="bf-fval">14</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-e4">Activity Level</span><div class="bf-ftrack"><div class="bf-ffill" data-v="55" style="--fc:#3b7dd8"></div></div><span class="bf-fval">11</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-e5">Excitement-Seeking</span><div class="bf-ftrack"><div class="bf-ffill" data-v="50" style="--fc:#3b7dd8"></div></div><span class="bf-fval">10</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-e6">Cheerfulness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="50" style="--fc:#3b7dd8"></div></div><span class="bf-fval">10</span></div>
+    </div>
+    <p class="bf-insight" data-t="bf-e-ctxt">Assertiveness (14) is the highest facet — this person can speak up and lead when it matters. But Friendliness (7) and Gregariousness (9) are the lowest — casual social warmth is draining, not energizing. Connection is selective and intentional, never automatic.</p>
+  </div>
+
+  <!-- Openness -->
+  <div class="bf-block reveal">
+    <div class="bf-header">
+      <div class="bf-header-left">
+        <span class="bf-letter" style="color:#e05c5c">O</span>
+        <div>
+          <span class="bf-main-name" data-t="bf-o-name">Openness</span>
+          <span class="bf-main-sub" data-t="bf-o-sub">Creativity &amp; Curiosity</span>
+        </div>
+      </div>
+      <div class="bf-total-wrap">
+        <span class="bf-total">83</span>
+        <span class="bf-total-max">/120</span>
+      </div>
+    </div>
+    <div class="bf-main-track"><div class="fill" data-v="69" style="background:linear-gradient(90deg,#e05c5c,#f09090)"></div></div>
+    <div class="bf-facets">
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-o1">Imagination</span><div class="bf-ftrack"><div class="bf-ffill" data-v="70" style="--fc:#e05c5c"></div></div><span class="bf-fval">14</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-o2">Artistic Interests</span><div class="bf-ftrack"><div class="bf-ffill" data-v="70" style="--fc:#e05c5c"></div></div><span class="bf-fval">14</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-o3">Emotionality</span><div class="bf-ftrack"><div class="bf-ffill" data-v="65" style="--fc:#e05c5c"></div></div><span class="bf-fval">13</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-o4">Adventurousness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="80" style="--fc:#e05c5c"></div></div><span class="bf-fval">16</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-o5">Intellect</span><div class="bf-ftrack"><div class="bf-ffill" data-v="85" style="--fc:#e05c5c"></div></div><span class="bf-fval">17</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-o6">Liberalism</span><div class="bf-ftrack"><div class="bf-ffill" data-v="45" style="--fc:#e05c5c"></div></div><span class="bf-fval">9</span></div>
+    </div>
+    <p class="bf-insight" data-t="bf-o-ctxt">Intellect (17) and Adventurousness (16) lead — an insatiable hunger for ideas and exploration beyond the obvious. Artistic Interests (14) and Imagination (14) run alongside. Notably, Liberalism (9) is the lowest — creative and curious, yet grounded in a principled, structured worldview.</p>
+  </div>
+
+  <!-- Agreeableness -->
+  <div class="bf-block reveal">
+    <div class="bf-header">
+      <div class="bf-header-left">
+        <span class="bf-letter" style="color:#e0993a">A</span>
+        <div>
+          <span class="bf-main-name" data-t="bf-a-name">Agreeableness</span>
+          <span class="bf-main-sub" data-t="bf-a-sub">Empathy &amp; Warmth</span>
+        </div>
+      </div>
+      <div class="bf-total-wrap">
+        <span class="bf-total">91</span>
+        <span class="bf-total-max">/120</span>
+      </div>
+    </div>
+    <div class="bf-main-track"><div class="fill" data-v="76" style="background:linear-gradient(90deg,#e0993a,#f0bf78)"></div></div>
+    <div class="bf-facets">
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-a1">Trust</span><div class="bf-ftrack"><div class="bf-ffill" data-v="65" style="--fc:#e0993a"></div></div><span class="bf-fval">13</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-a2">Morality</span><div class="bf-ftrack"><div class="bf-ffill" data-v="95" style="--fc:#e0993a"></div></div><span class="bf-fval">19</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-a3">Altruism</span><div class="bf-ftrack"><div class="bf-ffill" data-v="85" style="--fc:#e0993a"></div></div><span class="bf-fval">17</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-a4">Cooperation</span><div class="bf-ftrack"><div class="bf-ffill" data-v="80" style="--fc:#e0993a"></div></div><span class="bf-fval">16</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-a5">Modesty</span><div class="bf-ftrack"><div class="bf-ffill" data-v="50" style="--fc:#e0993a"></div></div><span class="bf-fval">10</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-a6">Sympathy</span><div class="bf-ftrack"><div class="bf-ffill" data-v="80" style="--fc:#e0993a"></div></div><span class="bf-fval">16</span></div>
+    </div>
+    <p class="bf-insight" data-t="bf-a-ctxt">Morality (19) is near-perfect — the highest single facet across all dimensions. Altruism (17), Cooperation (16), and Sympathy (16) follow closely. This isn't passive agreeableness; it's ethics-driven care. Modesty (10) is notably lower — a quiet confidence that doesn't apologize for competence.</p>
+  </div>
+
+  <!-- Conscientiousness -->
+  <div class="bf-block reveal">
+    <div class="bf-header">
+      <div class="bf-header-left">
+        <span class="bf-letter" style="color:var(--gm)">C</span>
+        <div>
+          <span class="bf-main-name" data-t="bf-c-name">Conscientiousness</span>
+          <span class="bf-main-sub" data-t="bf-c-sub">Discipline &amp; Order</span>
+        </div>
+      </div>
+      <div class="bf-total-wrap">
+        <span class="bf-total">85</span>
+        <span class="bf-total-max">/120</span>
+      </div>
+    </div>
+    <div class="bf-main-track"><div class="fill" data-v="71" style="background:linear-gradient(90deg,var(--gm),var(--gl))"></div></div>
+    <div class="bf-facets">
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-c1">Self-Efficacy</span><div class="bf-ftrack"><div class="bf-ffill" data-v="90" style="--fc:var(--gm)"></div></div><span class="bf-fval">18</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-c2">Orderliness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="45" style="--fc:var(--gm)"></div></div><span class="bf-fval">9</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-c3">Dutifulness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="85" style="--fc:var(--gm)"></div></div><span class="bf-fval">17</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-c4">Achievement-Striving</span><div class="bf-ftrack"><div class="bf-ffill" data-v="65" style="--fc:var(--gm)"></div></div><span class="bf-fval">13</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-c5">Self-Discipline</span><div class="bf-ftrack"><div class="bf-ffill" data-v="65" style="--fc:var(--gm)"></div></div><span class="bf-fval">13</span></div>
+      <div class="bf-facet"><span class="bf-fname" data-t="bff-c6">Cautiousness</span><div class="bf-ftrack"><div class="bf-ffill" data-v="75" style="--fc:var(--gm)"></div></div><span class="bf-fval">15</span></div>
+    </div>
+    <p class="bf-insight" data-t="bf-c-ctxt">Self-Efficacy (18) is the standout — an extremely high belief in one's own capability to execute. Dutifulness (17) and Cautiousness (15) follow. The outlier: Orderliness (9) is low, suggesting this isn't about being neat or tidy, but about being reliable, principled, and capable under one's own terms.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ DISC ══════════════ -->
+<section>
+  <p class="sec-lbl reveal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+    <span data-t="disc-lbl">DISC Assessment</span>
+  </p>
+  <h2 class="sec-ttl reveal" data-t="disc-ttl">Behavioral Style</h2>
+  <div class="disc-g">
+    <div class="dc reveal">
+      <div class="dc-letter">D</div>
+      <div class="dc-name" data-t="disc-d-name">Dominance</div>
+      <div class="dc-track"><div class="dc-fill" data-v="18"></div></div>
+      <p class="dc-pct" data-t="disc-d-pct">Graph III: −3 · Low</p>
+      <p class="dc-desc" data-t="disc-d-desc">Doesn't seek power or control. Avoids confrontation and rarely initiates direct conflict with others.</p>
+      <p class="dc-elab" data-t="disc-d-elab">With a Most score of 4 and a Least of 7, dominance is actively avoided rather than merely absent. This person pushes back only when their values are clearly at stake — and even then, does so with care and deliberateness rather than force.</p>
+    </div>
+    <div class="dc reveal" style="transition-delay:.08s">
+      <div class="dc-letter">I</div>
+      <div class="dc-name" data-t="disc-i-name">Influence</div>
+      <div class="dc-track"><div class="dc-fill" data-v="5"></div></div>
+      <p class="dc-pct" data-t="disc-i-pct">Graph III: −10 · Very Low</p>
+      <p class="dc-desc" data-t="disc-i-desc">The lowest dimension. Not drawn to social performance, networking for its own sake, or crowd energy.</p>
+      <p class="dc-elab" data-t="disc-i-elab">A Most of 0 paired with a Least of 10 is one of the sharpest contrasts possible — influence-seeking behaviors are consistently rejected. Connection, when it happens, is quiet and one-to-one. Depth over reach, always.</p>
+    </div>
+    <div class="dc reveal" style="transition-delay:.16s">
+      <div class="dc-letter">S</div>
+      <div class="dc-name" data-t="disc-s-name">Steadiness</div>
+      <div class="dc-track"><div class="dc-fill" data-v="62"></div></div>
+      <p class="dc-pct" data-t="disc-s-pct">Graph III: +3 · Moderate-High</p>
+      <p class="dc-desc" data-t="disc-s-desc">Patient, consistent, and dependable. A natural stabilizer in dynamic, high-pressure environments.</p>
+      <p class="dc-elab" data-t="disc-s-elab">Steadiness at +3 provides a calm, grounding presence. In moments of chaos, this person becomes an anchor — observing, processing, then responding rather than reacting. Teams rely on this consistency as a counterweight to volatility.</p>
+    </div>
+    <div class="dc reveal" style="transition-delay:.24s">
+      <div class="dc-letter">C</div>
+      <div class="dc-name" data-t="disc-c-name">Conscientiousness</div>
+      <div class="dc-track"><div class="dc-fill" data-v="85"></div></div>
+      <p class="dc-pct" data-t="disc-c-pct">Graph III: +8 · Dominant</p>
+      <p class="dc-desc" data-t="disc-c-desc">The highest and most dominant dimension. Detail-oriented, principled, and deeply quality-driven.</p>
+      <p class="dc-elab" data-t="disc-c-elab">A Most of 9 and Least of 1 — near-maximum consistency. The C=8 on Graph III confirms this as the true core behavioral drive. Public Self (6), Private Self (7), and Perceived Self (6.5) all align: the Perfectionist pattern is not situational. It is who they are across all contexts.</p>
+    </div>
+  </div>
+  <div class="insight reveal">
+    <span class="iq" data-t="disc-iq">Classic Pattern: SC — The Perfectionist</span>
+    <p data-t="disc-p1">The SC Perfectionist is one of the most internally consistent DISC profiles. High Conscientiousness (C=+8) anchored by moderate Steadiness (S=+3), with Dominance and Influence both suppressed. This person thinks systematically, follows procedures, needs stable conditions, avoids conflict, is anti-criticism, slow to decide, and resistant to sudden change. They are the quiet backbone of any team — precise, reliable, and holding themselves and their work to standards most people wouldn't even attempt.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ RIASEC ══════════════ -->
+<section>
+  <p class="sec-lbl reveal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+    <span data-t="ri-lbl">RIASEC · Holland Code</span>
+  </p>
+  <h2 class="sec-ttl reveal" data-t="ri-ttl">Interest Profile</h2>
+  <div class="radar-wrap reveal">
+    <div style="display:flex;justify-content:center">
+      <svg id="radarChart" width="250" height="250" viewBox="-125 -125 250 250" style="overflow:visible"></svg>
+    </div>
+    <div>
+      <div class="leg"><div class="leg-dot"></div><div><span class="leg-s" data-t="ri-leg-a">Artistic · 14</span><span class="leg-d" data-t="ri-leg-a-d">Creative, intuitive, expressive</span></div></div>
+      <div class="leg"><div class="leg-dot"></div><div><span class="leg-s" data-t="ri-leg-c">Conventional · 14</span><span class="leg-d" data-t="ri-leg-c-d">Structured, detail-oriented, orderly</span></div></div>
+      <div class="leg"><div class="leg-dot"></div><div><span class="leg-s" data-t="ri-leg-i">Investigative · 13</span><span class="leg-d" data-t="ri-leg-i-d">Analytical, intellectual, scientific</span></div></div>
+      <div class="leg"><div class="leg-dot lo"></div><div><span class="leg-s" data-t="ri-leg-r">Realistic · 12</span><span class="leg-d" data-t="ri-leg-r-d">Practical, technical, hands-on</span></div></div>
+      <div class="leg"><div class="leg-dot lo"></div><div><span class="leg-s" data-t="ri-leg-e">Enterprising · 12</span><span class="leg-d" data-t="ri-leg-e-d">Leadership, persuasive</span></div></div>
+      <div class="leg"><div class="leg-dot lo"></div><div><span class="leg-s" data-t="ri-leg-s">Social · 11</span><span class="leg-d" data-t="ri-leg-s-d">Helping, empathetic, collaborative</span></div></div>
+    </div>
+  </div>
+  <div class="rc-grid reveal">
+    <div class="rc"><div class="rc-i hi">A</div><p class="rc-l" data-t="ri-a-l">Artistic · 14</p><p class="rc-t" data-t="ri-a-t">Co-dominant code. Needs creative expression as an outlet — through writing, design, or conceptual thinking. Resists rigid structure. Original by nature, easily frustrated in environments that demand pure conformity over creativity.</p></div>
+    <div class="rc"><div class="rc-i hi">C</div><p class="rc-l" data-t="ri-c-l">Conventional · 14</p><p class="rc-t" data-t="ri-c-t">Co-dominant code. A paradox alongside Artistic — yet deeply coherent. The Conventional side craves order, accuracy, and systems. Together, A+C produces someone who imagines boldly but executes with precision and discipline.</p></div>
+    <div class="rc"><div class="rc-i hi">I</div><p class="rc-l" data-t="ri-i-l">Investigative · 13</p><p class="rc-t" data-t="ri-i-t">Strong secondary code. Driven by the need to understand how and why things work. Drawn to research, analysis, and complex problem-solving. Prefers depth over speed, and evidence over assumption.</p></div>
+    <div class="rc"><div class="rc-i">R</div><p class="rc-l" data-t="ri-r-l">Realistic · 12</p><p class="rc-t" data-t="ri-r-t">Present but not primary. Capable of practical, grounded work when needed — but rarely the source of intrinsic motivation. Prefers ideas and systems over tools and machines.</p></div>
+    <div class="rc"><div class="rc-i">E</div><p class="rc-l" data-t="ri-e-l">Enterprising · 12</p><p class="rc-t" data-t="ri-e-t">Present but not primary. Can lead and persuade when the cause is meaningful. However, leadership for status alone holds no appeal. Not motivated by titles or competitive dominance.</p></div>
+    <div class="rc"><div class="rc-i">S</div><p class="rc-l" data-t="ri-s-l">Social · 11</p><p class="rc-t" data-t="ri-s-t">The lowest score, yet the humanistic thread runs deep. Despite low Social interest scores, genuine empathy and care for people persist — they're just expressed through craft and ideas rather than direct social work.</p></div>
+  </div>
+  <div class="insight reveal">
+    <span class="iq" data-t="ri-iq">Holland Code: ACi — The Creative Systematist</span>
+    <p data-t="ri-p1">The rare Artistic-Conventional tie at the top reveals someone who lives at the intersection of imagination and precision. Not one or the other — both simultaneously. Add the Investigative secondary and you get a profile built for research-driven creative work: crafting systems that are both beautiful and rigorous, producing output that is both original and meticulous. Ideal environments: UX/product design, technical writing, data visualization, instructional design, research communication, or any field where creative thinking must be executed with systematic discipline.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ ENNEAGRAM ══════════════ -->
+<section>
+  <p class="sec-lbl reveal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+    <span data-t="en-lbl">Enneagram</span>
+  </p>
+  <h2 class="sec-ttl reveal" data-t="en-ttl">Core Motivation</h2>
+  <div class="en-g">
+    <div class="en-badge reveal">
+      <div class="en-orbit"></div>
+      <span class="en-n">5</span>
+      <span class="en-w">w4</span>
+    </div>
+    <div class="reveal" style="transition-delay:.12s">
+      <p class="en-ttl" data-t="en-name">The Iconoclast</p>
+      <div class="tags">
+        <span class="tag" data-t="tag-1">Withdrawn</span><span class="tag" data-t="tag-2">Perceptive</span><span class="tag" data-t="tag-3">Innovative</span>
+        <span class="tag" data-t="tag-4">Intense</span><span class="tag" data-t="tag-5">Independent</span><span class="tag" data-t="tag-6">Visionary</span>
+      </div>
+      <p class="en-d" data-t="en-d">Type 5 — driven by the need to understand. The w4 wing adds emotional depth, aesthetic sensibility, and a strong sense of identity. This person gathers knowledge voraciously, processes alone, and shares selectively — but what they share tends to be profound.</p>
+    </div>
+  </div>
+  <div class="g3 reveal" style="margin-top:1.8rem">
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg><span data-t="en-fear-lbl">Core Fear</span></p>
+      <p class="ctxt" data-t="en-fear-txt">Feeling helpless and incapable. Deeply fears being overwhelmed by the demands of the world without enough inner resources to cope. Responds by withdrawing and accumulating knowledge as a protective fortress.</p>
+    </div>
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-t="en-des-lbl">Core Desire</span></p>
+      <p class="ctxt" data-t="en-des-txt">To be capable and competent — to understand the world deeply enough to navigate it with confidence. Craves true mastery: not surface knowledge, but comprehensive understanding that makes them genuinely prepared for anything.</p>
+    </div>
+    <div class="card">
+      <p class="clbl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-t="en-wing-lbl">The w4 Wing</span></p>
+      <p class="ctxt" data-t="en-wing-txt">The Four wing adds emotional depth, aesthetic sensibility, and a strong sense of unique identity. Makes them more introspective, artistic, and intensely aware of their inner world — distinct from the purely analytical pure Type 5.</p>
+    </div>
+  </div>
+  <div class="insight reveal">
+    <span class="iq" data-t="en-iq">"A mind that thinks in ways others haven't yet thought."</span>
+    <p data-t="en-p1">Enneagram 5w4s are among the most intellectually independent types. They build elaborate inner worlds — rich with ideas, systems, theories, and creative visions — that they often feel no one else can fully access or appreciate. They are simultaneously the most self-contained and most profoundly curious of people.</p>
+    <p data-t="en-p2">Their growth path involves learning to trust that they already have enough — enough knowledge, enough resources, enough to offer — and stepping out of the observation tower into genuine connection. The transition from detached observer to engaged participant, without losing their depth, is their lifelong work.</p>
+    <p data-t="en-p3">Under stress (moving toward Type 7): scattered, impulsive, restless. In growth (moving toward Type 8): decisive, grounded, boldly present.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ SUMMARY ══════════════ -->
+<section id="summary">
+  <p class="sec-lbl reveal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <span data-t="sum-lbl">Synthesis · Full Profile</span>
+  </p>
+  <h2 class="sec-ttl reveal" data-t="sum-ttl">Who Is Irvan Maulana?</h2>
+
+  <!-- Portrait paragraph -->
+  <div class="sum-portrait reveal">
+    <p data-t="sum-p1">Irvan is a rare convergence of seemingly contradictory qualities — a mind that is simultaneously analytical and artistic, systematic and imaginative, deeply empathetic and rigorously principled. Across five different frameworks, one picture emerges with striking consistency: a person who thinks in depth, acts from conviction, and moves through the world quietly but with profound internal intensity.</p>
+    <p data-t="sum-p2">He is not someone you notice immediately. But he is the person whose thinking you remember long after the conversation ends — precise, layered, and always pointing toward something larger than the surface. He builds slowly, carefully, and with exceptional attention to what matters. His work is rarely flashy, but almost always excellent.</p>
+  </div>
+
+  <!-- Cross-framework summary chips -->
+  <div class="sum-matrix reveal">
+    <div class="sum-matrix-row">
+      <span class="sum-matrix-key">MBTI</span>
+      <span class="sum-matrix-val">INFJ-T</span>
+      <span class="sum-matrix-desc" data-t="sum-mbti-desc">Rarest type. Visionary + Empathetic + Turbulent perfectionist.</span>
+    </div>
+    <div class="sum-matrix-row">
+      <span class="sum-matrix-key">Big Five</span>
+      <span class="sum-matrix-val">A91 · C85 · O83</span>
+      <span class="sum-matrix-desc" data-t="sum-bf-desc">Exceptionally moral, highly capable, deeply curious.</span>
+    </div>
+    <div class="sum-matrix-row">
+      <span class="sum-matrix-key">DISC</span>
+      <span class="sum-matrix-val">SC · C+8</span>
+      <span class="sum-matrix-desc" data-t="sum-disc-desc">Perfectionist. Systematic, stable, avoids social noise.</span>
+    </div>
+    <div class="sum-matrix-row">
+      <span class="sum-matrix-key">RIASEC</span>
+      <span class="sum-matrix-val">ACi</span>
+      <span class="sum-matrix-desc" data-t="sum-ri-desc">Creative-Systematic. Imagines boldly, executes precisely.</span>
+    </div>
+    <div class="sum-matrix-row">
+      <span class="sum-matrix-key">Enneagram</span>
+      <span class="sum-matrix-val">5w4</span>
+      <span class="sum-matrix-desc" data-t="sum-en-desc">The Iconoclast. Knowledge-seeker with aesthetic depth.</span>
+    </div>
+  </div>
+
+  <!-- Strengths & Weaknesses -->
+  <div class="sw-grid reveal">
+
+    <!-- STRENGTHS -->
+    <div class="sw-block sw-strength">
+      <div class="sw-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span data-t="sum-str-ttl">Strengths</span>
+      </div>
+      <ul class="sw-list">
+        <li><span class="sw-item-title" data-t="s1t">Exceptional Integrity</span><span class="sw-item-desc" data-t="s1d">Morality (19/20) is near-perfect across Big Five — ethics aren't a strategy, they're a foundation. This makes Irvan deeply trustworthy and consistent in his values regardless of context.</span></li>
+        <li><span class="sw-item-title" data-t="s2t">Systemic + Creative Thinking</span><span class="sw-item-desc" data-t="s2d">The rare ACi Holland Code combined with INFJ intuition means he can see the whole picture and architect a path to it — imaginative at the macro level, disciplined at the micro level.</span></li>
+        <li><span class="sw-item-title" data-t="s3t">High Self-Efficacy</span><span class="sw-item-desc" data-t="s3d">Self-Efficacy (18/20) is his highest Conscientiousness facet — a deep-rooted belief in his own ability to figure things out. Even under uncertainty, this becomes a stabilizing force.</span></li>
+        <li><span class="sw-item-title" data-t="s4t">Precision Under Pressure</span><span class="sw-item-desc" data-t="s4d">DISC Steadiness (+3) combined with high Conscientiousness (+8) means quality doesn't slip when things get hard. He is one of the rare people who gets more careful, not more careless, under stress.</span></li>
+        <li><span class="sw-item-title" data-t="s5t">Depth of Insight</span><span class="sw-item-desc" data-t="s5d">Intellect (17), Adventurousness (16), and the 5w4 drive to understand create an unusually penetrating mind — one that finds patterns others miss and connects dots across disciplines.</span></li>
+        <li><span class="sw-item-title" data-t="s6t">Principled Reliability</span><span class="sw-item-desc" data-t="s6d">Dutifulness (17) + DISC Conscientiousness = someone who does not need to be managed. Once committed, the work gets done — thoroughly, correctly, and without excuses.</span></li>
+      </ul>
+    </div>
+
+    <!-- WEAKNESSES -->
+    <div class="sw-block sw-weakness">
+      <div class="sw-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span data-t="sum-wk-ttl">Weaknesses</span>
+      </div>
+      <ul class="sw-list">
+        <li><span class="sw-item-title" data-t="w1t">Burnout from Over-Giving</span><span class="sw-item-desc" data-t="w1d">Agreeableness (91) + INFJ tendency to absorb others' emotions + high self-standards = a person who gives deeply but replenishes slowly. Without deliberate boundaries, exhaustion accumulates invisibly.</span></li>
+        <li><span class="sw-item-title" data-t="w2t">Perfectionism as a Trap</span><span class="sw-item-desc" data-t="w2d">DISC Conscientiousness (+8) + INFJ-T turbulence + Orderliness gap = someone who can get stuck perfecting details of work that is already excellent. "Good enough" rarely feels good enough.</span></li>
+        <li><span class="sw-item-title" data-t="w3t">High Anxiety Baseline</span><span class="sw-item-desc" data-t="w3d">Neuroticism (78) with Anxiety as the highest facet (16/20) means the internal noise level is persistently high — even when nothing is objectively wrong. This costs energy and distorts self-perception.</span></li>
+        <li><span class="sw-item-title" data-t="w4t">Resistance to Sudden Change</span><span class="sw-item-desc" data-t="w4d">DISC SC pattern explicitly includes anti-change as a trait. Unexpected shifts in environment, plans, or relationships can cause disproportionate distress and decision paralysis.</span></li>
+        <li><span class="sw-item-title" data-t="w5t">Social Withdrawal Under Stress</span><span class="sw-item-desc" data-t="w5d">Influence (−10) + Enneagram 5 isolation tendency + Neuroticism = a person who retreats inward precisely when external connection could help most. Stress causes further withdrawal, creating a difficult cycle.</span></li>
+        <li><span class="sw-item-title" data-t="w6t">Slow Decision-Making</span><span class="sw-item-desc" data-t="w6d">DISC Conscientiousness paired with Cautiousness (15) and low Dominance means decisions are thoroughly considered — sometimes too thoroughly. In fast-moving contexts, this caution can read as indecision.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Closing synthesis -->
+  <div class="insight reveal" style="margin-top:2rem">
+    <span class="iq" data-t="sum-iq">"Not the loudest voice in the room — but often the most important one."</span>
+    <p data-t="sum-close1">Irvan's profile is fundamentally one of depth over breadth, quality over speed, and principle over convenience. He is at his best when given space to think deeply, work independently on meaningful problems, and operate within systems he trusts. He is at his worst in chaotic, high-social, fast-changing environments that demand quick decisions and surface-level interactions.</p>
+    <p data-t="sum-close2">The convergence across all five frameworks is unusually tight: every test points toward the same person — a quietly intense, rigorously ethical, creatively systematic thinker who holds himself to standards most people wouldn't even set. His greatest challenge is not capability — it is learning to deploy that capability without depleting himself in the process.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<footer>
+  <span class="footer-name">Irvan Maulana</span>
+  <span class="fm">INFJ-T · 5w4 · SC · ACi</span>
+  <span class="footer-sub" data-t="footer-sub">Personality Profile · Crafted with intention</span>
+  <div class="toggles">
+    <button class="tog-btn" id="themeBtn" aria-label="Toggle dark mode">
+      <span class="tog-icon">☽</span>
+      <div class="tog-track"></div>
+      <span id="themeLabel" data-t="dark-label">Dark Mode</span>
+    </button>
+    <button class="tog-btn" id="langBtn" aria-label="Toggle language">
+      <span class="lang-flag">🇮🇩</span>
+      <div class="tog-track"></div>
+      <span id="langLabel">Bahasa Indonesia</span>
+    </button>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en: {
+    'hero-label':'Personality Profile',
+    'hero-title':'The Advocate — Rare, Purposeful, Visionary',
+    'hero-desc':'A rich inner world driven by intuition and empathy — always searching for meaning beneath the surface of everything.',
+    'chip-i':'Introverted','chip-n':'Intuitive','chip-f':'Feeling','chip-j':'Judging','chip-t':'Turbulent',
+    'scroll':'scroll down',
+    'mbti-lbl':'MBTI · Myers-Briggs','mbti-ttl':'The Advocate',
+    'mbti-i-lbl':'Introversion (I)','mbti-i-txt':'Energy comes from within. Social interactions feel meaningful but draining — solitude is needed to recharge. Prefers deep conversation over small talk, and always processes thoughts internally before speaking.',
+    'mbti-n-lbl':'Intuition (N)','mbti-n-txt':'Perceives the world through patterns, symbols, and possibilities — not raw facts. Future-oriented, visionary, and always drawn to big ideas and untapped potential. Asks "why?" far more often than "what?"',
+    'mbti-f-lbl':'Feeling (F)','mbti-f-txt':'Decisions are guided by values, empathy, and human impact. Highly attuned to emotional currents — often sensing how people feel before it\'s spoken. Authenticity and ethics are non-negotiable anchors.',
+    'mbti-j-lbl':'Judging (J)','mbti-j-txt':'Thrives with structure, closure, and planning. Grows with clear goals. Not just a dreamer — a committed executor. The J transforms abstract vision into deliberate action, and idealism into tangible impact.',
+    'mbti-t-lbl':'Turbulent Variant (-T)','mbti-t-txt':'The -T suffix marks a more self-critical, perfectionist, and stress-sensitive variant of INFJ. Turbulent INFJs hold themselves to exceptionally high standards, are more prone to self-doubt, and feel the weight of unmet expectations deeply. This inner pressure, while challenging, is also the engine behind their relentless drive to grow and improve.',
+    'mbti-iq':'"The rarest of types — only ~1.5% of the world\'s population."',
+    'mbti-p1':'INFJs are unique in combining deep empathy with strategic thinking. They don\'t simply feel the world — they analyze it, build frameworks for it, and dedicate themselves to improving it. The core tension of an INFJ is being a deeply private person with a burning desire to make a public difference.',
+    'mbti-p2':'At their best: inspiring mentors, visionary writers, ethical leaders. At their edge: prone to burnout from over-giving, perfectionism, and the quiet frustration of feeling perpetually misunderstood.',
+    'bf-lbl':'Big Five · OCEAN','bf-ttl':'Personality Dimensions',
+    'bf-n-name':'Neuroticism','bf-n-sub':'Emotional Sensitivity',
+    'bff-n1':'Anxiety','bff-n2':'Anger','bff-n3':'Depression','bff-n4':'Self-Consciousness','bff-n5':'Immoderation','bff-n6':'Vulnerability',
+    'bf-n-ctxt':'Anxiety (16), Self-Consciousness (14), and Vulnerability (14) dominate — painting a picture of someone who feels the texture of life intensely. High Neuroticism is the shadow side of deep sensitivity: the same wiring that enables empathy and creativity also amplifies stress, self-criticism, and emotional turbulence. Consistent with the INFJ-T variant.',
+    'bf-e-name':'Extraversion','bf-e-sub':'Social Energy',
+    'bff-e1':'Friendliness','bff-e2':'Gregariousness','bff-e3':'Assertiveness','bff-e4':'Activity Level','bff-e5':'Excitement-Seeking','bff-e6':'Cheerfulness',
+    'bf-e-ctxt':'Assertiveness (14) is the highest facet — this person can speak up and lead when it matters. But Friendliness (7) and Gregariousness (9) are the lowest — casual social warmth is draining, not energizing. Connection is selective and intentional, never automatic.',
+    'bf-o-name':'Openness','bf-o-sub':'Creativity & Curiosity',
+    'bff-o1':'Imagination','bff-o2':'Artistic Interests','bff-o3':'Emotionality','bff-o4':'Adventurousness','bff-o5':'Intellect','bff-o6':'Liberalism',
+    'bf-o-ctxt':'Intellect (17) and Adventurousness (16) lead — an insatiable hunger for ideas and exploration beyond the obvious. Artistic Interests (14) and Imagination (14) run alongside. Notably, Liberalism (9) is the lowest — creative and curious, yet grounded in a principled, structured worldview.',
+    'bf-a-name':'Agreeableness','bf-a-sub':'Empathy & Warmth',
+    'bff-a1':'Trust','bff-a2':'Morality','bff-a3':'Altruism','bff-a4':'Cooperation','bff-a5':'Modesty','bff-a6':'Sympathy',
+    'bf-a-ctxt':'Morality (19) is near-perfect — the highest single facet across all dimensions. Altruism (17), Cooperation (16), and Sympathy (16) follow closely. This isn\'t passive agreeableness; it\'s ethics-driven care. Modesty (10) is notably lower — a quiet confidence that doesn\'t apologize for competence.',
+    'bf-c-name':'Conscientiousness','bf-c-sub':'Discipline & Order',
+    'bff-c1':'Self-Efficacy','bff-c2':'Orderliness','bff-c3':'Dutifulness','bff-c4':'Achievement-Striving','bff-c5':'Self-Discipline','bff-c6':'Cautiousness',
+    'bf-c-ctxt':'Self-Efficacy (18) is the standout — an extremely high belief in one\'s own capability to execute. Dutifulness (17) and Cautiousness (15) follow. The outlier: Orderliness (9) is low, suggesting this isn\'t about being neat or tidy, but about being reliable, principled, and capable under one\'s own terms.',
+    'disc-lbl':'DISC Assessment','disc-ttl':'Behavioral Style',
+    'disc-d-name':'Dominance','disc-d-pct':'Graph III: −3 · Low','disc-d-desc':'Doesn\'t seek power or control. Avoids confrontation and rarely initiates direct conflict with others.','disc-d-elab':'With a Most score of 4 and a Least of 7, dominance is actively avoided rather than merely absent. This person pushes back only when their values are clearly at stake — and even then, does so with care and deliberateness rather than force.',
+    'disc-i-name':'Influence','disc-i-pct':'Graph III: −10 · Very Low','disc-i-desc':'The lowest dimension. Not drawn to social performance, networking for its own sake, or crowd energy.','disc-i-elab':'A Most of 0 paired with a Least of 10 is one of the sharpest contrasts possible — influence-seeking behaviors are consistently rejected. Connection, when it happens, is quiet and one-to-one. Depth over reach, always.',
+    'disc-s-name':'Steadiness','disc-s-pct':'Graph III: +3 · Moderate-High','disc-s-desc':'Patient, consistent, and dependable. A natural stabilizer in dynamic, high-pressure environments.','disc-s-elab':'Steadiness at +3 provides a calm, grounding presence. In moments of chaos, this person becomes an anchor — observing, processing, then responding rather than reacting. Teams rely on this consistency as a counterweight to volatility.',
+    'disc-c-name':'Conscientiousness','disc-c-pct':'Graph III: +8 · Dominant','disc-c-desc':'The highest and most dominant dimension. Detail-oriented, principled, and deeply quality-driven.','disc-c-elab':'A Most of 9 and Least of 1 — near-maximum consistency. The C=8 on Graph III confirms this as the true core behavioral drive. Public Self (6), Private Self (7), and Perceived Self (6.5) all align: the Perfectionist pattern is not situational. It is who they are across all contexts.',
+    'disc-iq':'Classic Pattern: SC — The Perfectionist',
+    'disc-p1':'The SC Perfectionist is one of the most internally consistent DISC profiles. High Conscientiousness (C=+8) anchored by moderate Steadiness (S=+3), with Dominance and Influence both suppressed. This person thinks systematically, follows procedures, needs stable conditions, avoids conflict, is anti-criticism, slow to decide, and resistant to sudden change. They are the quiet backbone of any team — precise, reliable, and holding themselves and their work to standards most people wouldn\'t even attempt.',
+    'ri-lbl':'RIASEC · Holland Code','ri-ttl':'Interest Profile',
+    'ri-leg-a':'Artistic · 14','ri-leg-a-d':'Creative, intuitive, expressive',
+    'ri-leg-c':'Conventional · 14','ri-leg-c-d':'Structured, detail-oriented, orderly',
+    'ri-leg-i':'Investigative · 13','ri-leg-i-d':'Analytical, intellectual, scientific',
+    'ri-leg-r':'Realistic · 12','ri-leg-r-d':'Practical, technical, hands-on',
+    'ri-leg-e':'Enterprising · 12','ri-leg-e-d':'Leadership, persuasive',
+    'ri-leg-s':'Social · 11','ri-leg-s-d':'Helping, empathetic, collaborative',
+    'ri-a-l':'Artistic · 14','ri-a-t':'Co-dominant code. Needs creative expression as an outlet — through writing, design, or conceptual thinking. Resists rigid structure. Original by nature, easily frustrated in environments that demand pure conformity over creativity.',
+    'ri-c-l':'Conventional · 14','ri-c-t':'Co-dominant code. A paradox alongside Artistic — yet deeply coherent. The Conventional side craves order, accuracy, and systems. Together, A+C produces someone who imagines boldly but executes with precision and discipline.',
+    'ri-i-l':'Investigative · 13','ri-i-t':'Strong secondary code. Driven by the need to understand how and why things work. Drawn to research, analysis, and complex problem-solving. Prefers depth over speed, and evidence over assumption.',
+    'ri-r-l':'Realistic · 12','ri-r-t':'Present but not primary. Capable of practical, grounded work when needed — but rarely the source of intrinsic motivation. Prefers ideas and systems over tools and machines.',
+    'ri-e-l':'Enterprising · 12','ri-e-t':'Present but not primary. Can lead and persuade when the cause is meaningful. However, leadership for status alone holds no appeal. Not motivated by titles or competitive dominance.',
+    'ri-s-l':'Social · 11','ri-s-t':'The lowest score, yet the humanistic thread runs deep. Despite low Social interest scores, genuine empathy and care for people persist — they\'re just expressed through craft and ideas rather than direct social work.',
+    'ri-iq':'Holland Code: ACi — The Creative Systematist',
+    'ri-p1':'The rare Artistic-Conventional tie at the top reveals someone who lives at the intersection of imagination and precision. Not one or the other — both simultaneously. Add the Investigative secondary and you get a profile built for research-driven creative work: crafting systems that are both beautiful and rigorous, producing output that is both original and meticulous. Ideal environments: UX/product design, technical writing, data visualization, instructional design, research communication, or any field where creative thinking must be executed with systematic discipline.',
+    'en-lbl':'Enneagram','en-ttl':'Core Motivation','en-name':'The Iconoclast',
+    'tag-1':'Withdrawn','tag-2':'Perceptive','tag-3':'Innovative','tag-4':'Intense','tag-5':'Independent','tag-6':'Visionary',
+    'en-d':'Type 5 — driven by the need to understand. The w4 wing adds emotional depth, aesthetic sensibility, and a strong sense of identity. This person gathers knowledge voraciously, processes alone, and shares selectively — but what they share tends to be profound.',
+    'en-fear-lbl':'Core Fear','en-fear-txt':'Feeling helpless and incapable. Deeply fears being overwhelmed by the demands of the world without enough inner resources to cope. Responds by withdrawing and accumulating knowledge as a protective fortress.',
+    'en-des-lbl':'Core Desire','en-des-txt':'To be capable and competent — to understand the world deeply enough to navigate it with confidence. Craves true mastery: not surface knowledge, but comprehensive understanding that makes them genuinely prepared for anything.',
+    'en-wing-lbl':'The w4 Wing','en-wing-txt':'The Four wing adds emotional depth, aesthetic sensibility, and a strong sense of unique identity. Makes them more introspective, artistic, and intensely aware of their inner world — distinct from the purely analytical pure Type 5.',
+    'en-iq':'"A mind that thinks in ways others haven\'t yet thought."',
+    'en-p1':'Enneagram 5w4s are among the most intellectually independent types. They build elaborate inner worlds — rich with ideas, systems, theories, and creative visions — that they often feel no one else can fully access or appreciate. They are simultaneously the most self-contained and most profoundly curious of people.',
+    'en-p2':'Their growth path involves learning to trust that they already have enough — enough knowledge, enough resources, enough to offer — and stepping out of the observation tower into genuine connection. The transition from detached observer to engaged participant, without losing their depth, is their lifelong work.',
+    'en-p3':'Under stress (moving toward Type 7): scattered, impulsive, restless. In growth (moving toward Type 8): decisive, grounded, boldly present.',
+    'footer-sub':'Personality Profile · Crafted with intention',
+    'dark-label':'Dark Mode',
+    // SUMMARY
+    'sum-lbl':'Synthesis · Full Profile','sum-ttl':'Who Is Irvan Maulana?',
+    'sum-p1':'Irvan is a rare convergence of seemingly contradictory qualities — a mind that is simultaneously analytical and artistic, systematic and imaginative, deeply empathetic and rigorously principled. Across five different frameworks, one picture emerges with striking consistency: a person who thinks in depth, acts from conviction, and moves through the world quietly but with profound internal intensity.',
+    'sum-p2':'He is not someone you notice immediately. But he is the person whose thinking you remember long after the conversation ends — precise, layered, and always pointing toward something larger than the surface. He builds slowly, carefully, and with exceptional attention to what matters. His work is rarely flashy, but almost always excellent.',
+    'sum-mbti-desc':'Rarest type. Visionary + Empathetic + Turbulent perfectionist.',
+    'sum-bf-desc':'Exceptionally moral, highly capable, deeply curious.',
+    'sum-disc-desc':'Perfectionist. Systematic, stable, avoids social noise.',
+    'sum-ri-desc':'Creative-Systematic. Imagines boldly, executes precisely.',
+    'sum-en-desc':'The Iconoclast. Knowledge-seeker with aesthetic depth.',
+    'sum-str-ttl':'Strengths','sum-wk-ttl':'Weaknesses',
+    's1t':'Exceptional Integrity','s1d':'Morality (19/20) is near-perfect across Big Five — ethics aren\'t a strategy, they\'re a foundation. This makes Irvan deeply trustworthy and consistent in his values regardless of context.',
+    's2t':'Systemic + Creative Thinking','s2d':'The rare ACi Holland Code combined with INFJ intuition means he can see the whole picture and architect a path to it — imaginative at the macro level, disciplined at the micro level.',
+    's3t':'High Self-Efficacy','s3d':'Self-Efficacy (18/20) is his highest Conscientiousness facet — a deep-rooted belief in his own ability to figure things out. Even under uncertainty, this becomes a stabilizing force.',
+    's4t':'Precision Under Pressure','s4d':'DISC Steadiness (+3) combined with high Conscientiousness (+8) means quality doesn\'t slip when things get hard. He gets more careful, not more careless, under stress.',
+    's5t':'Depth of Insight','s5d':'Intellect (17), Adventurousness (16), and the 5w4 drive to understand create an unusually penetrating mind — one that finds patterns others miss and connects dots across disciplines.',
+    's6t':'Principled Reliability','s6d':'Dutifulness (17) + DISC Conscientiousness = someone who does not need to be managed. Once committed, the work gets done — thoroughly, correctly, and without excuses.',
+    'w1t':'Burnout from Over-Giving','w1d':'Agreeableness (91) + INFJ tendency to absorb others\' emotions + high self-standards = a person who gives deeply but replenishes slowly. Without deliberate boundaries, exhaustion accumulates invisibly.',
+    'w2t':'Perfectionism as a Trap','w2d':'DISC Conscientiousness (+8) + INFJ-T turbulence = someone who can get stuck perfecting work that is already excellent. "Good enough" rarely feels good enough.',
+    'w3t':'High Anxiety Baseline','w3d':'Neuroticism (78) with Anxiety as the highest facet (16/20) means the internal noise level is persistently high — even when nothing is objectively wrong. This costs energy and distorts self-perception.',
+    'w4t':'Resistance to Sudden Change','w4d':'DISC SC pattern explicitly includes anti-change. Unexpected shifts in environment, plans, or relationships can cause disproportionate distress and decision paralysis.',
+    'w5t':'Social Withdrawal Under Stress','w5d':'Influence (−10) + Enneagram 5 isolation tendency + Neuroticism = a person who retreats inward precisely when external connection could help most.',
+    'w6t':'Slow Decision-Making','w6d':'DISC Conscientiousness paired with Cautiousness (15) and low Dominance means decisions are thoroughly considered — sometimes too thoroughly. In fast-moving contexts, this caution can read as indecision.',
+    'sum-iq':'"Not the loudest voice in the room — but often the most important one."',
+    'sum-close1':'Irvan\'s profile is fundamentally one of depth over breadth, quality over speed, and principle over convenience. He is at his best when given space to think deeply, work independently on meaningful problems, and operate within systems he trusts. He is at his worst in chaotic, high-social, fast-changing environments that demand quick decisions and surface-level interactions.',
+    'sum-close2':'The convergence across all five frameworks is unusually tight: every test points toward the same person — a quietly intense, rigorously ethical, creatively systematic thinker who holds himself to standards most people wouldn\'t even set. His greatest challenge is not capability — it is learning to deploy that capability without depleting himself in the process.',
+  },
+  id: {
+    'hero-label':'Profil Kepribadian',
+    'hero-title':'Sang Advokat — Langka, Penuh Tujuan, Visioner',
+    'hero-desc':'Dunia batin yang kaya, digerakkan oleh intuisi dan empati — selalu mencari makna di balik setiap hal yang terjadi.',
+    'chip-i':'Introvert','chip-n':'Intuitif','chip-f':'Perasa','chip-j':'Terencana','chip-t':'Turbulent',
+    'scroll':'gulir ke bawah',
+    'mbti-lbl':'MBTI · Myers-Briggs','mbti-ttl':'Sang Advokat',
+    'mbti-i-lbl':'Introversi (I)','mbti-i-txt':'Energi bersumber dari dalam diri. Interaksi sosial terasa bermakna namun menguras tenaga — perlu waktu menyendiri untuk pulih. Lebih memilih percakapan mendalam daripada basa-basi, dan selalu memproses pikiran secara internal sebelum berbicara.',
+    'mbti-n-lbl':'Intuisi (N)','mbti-n-txt':'Memandang dunia melalui pola, simbol, dan kemungkinan — bukan sekadar fakta mentah. Berorientasi masa depan, visioner, dan selalu tertarik pada ide-ide besar serta potensi yang belum terwujud. Lebih sering bertanya "mengapa?" daripada "apa?"',
+    'mbti-f-lbl':'Perasaan (F)','mbti-f-txt':'Keputusan dipandu oleh nilai, empati, dan dampak terhadap manusia. Sangat peka terhadap arus emosi di sekitarnya — sering menangkap perasaan orang lain bahkan sebelum diungkapkan. Keaslian dan etika adalah jangkar yang tidak bisa ditawar.',
+    'mbti-j-lbl':'Penilaian (J)','mbti-j-txt':'Menyukai struktur, kepastian, dan perencanaan. Tumbuh subur dengan tujuan yang jelas. Bukan hanya bermimpi — berkomitmen. Aspek J inilah yang mengubah visi abstrak menjadi tindakan nyata dan idealisme menjadi dampak yang terasa.',
+    'mbti-t-lbl':'Varian Turbulent (-T)','mbti-t-txt':'Sufiks -T menandai varian INFJ yang lebih self-critical, perfeksionis, dan sensitif terhadap stres. INFJ Turbulent memegang standar yang sangat tinggi pada diri sendiri, lebih rentan terhadap keraguan diri, dan merasakan beban ekspektasi yang tidak terpenuhi secara mendalam. Tekanan batin ini, meskipun menantang, juga menjadi mesin di balik dorongan tanpa henti untuk tumbuh dan berkembang.',
+    'mbti-iq':'"Tipe paling langka — hanya ~1,5% dari seluruh populasi dunia."',
+    'mbti-p1':'INFJ unik karena memadukan empati yang dalam dengan pemikiran strategis. Mereka tidak sekadar merasakan dunia — mereka menganalisisnya, membangun kerangka berpikir, dan mendedikasikan diri untuk memperbaikinya. Ketegangan inti seorang INFJ adalah menjadi pribadi yang sangat privat, namun memiliki dorongan membara untuk membuat perbedaan nyata bagi banyak orang.',
+    'mbti-p2':'Di puncaknya: mentor yang menginspirasi, penulis visioner, pemimpin beretika. Di sisi rawannya: rentan kelelahan karena terlalu banyak memberi, perfeksionisme, dan rasa frustrasi yang diam-diam dari perasaan selalu disalahpahami.',
+    'bf-lbl':'Big Five · OCEAN','bf-ttl':'Dimensi Kepribadian',
+    'bf-n-name':'Neurotisisme','bf-n-sub':'Sensitivitas Emosional',
+    'bff-n1':'Kecemasan','bff-n2':'Amarah','bff-n3':'Depresi','bff-n4':'Kesadaran-Diri','bff-n5':'Immoderasi','bff-n6':'Kerentanan',
+    'bf-n-ctxt':'Kecemasan (16), Kesadaran-Diri (14), dan Kerentanan (14) mendominasi — menggambarkan seseorang yang merasakan tekstur kehidupan secara intens. Neurotisisme tinggi adalah sisi bayangan dari sensitivitas yang dalam: kabel yang sama yang memungkinkan empati dan kreativitas juga memperkuat stres, kritik diri, dan gejolak emosional. Konsisten dengan varian INFJ-T.',
+    'bf-e-name':'Ekstraversi','bf-e-sub':'Energi Sosial',
+    'bff-e1':'Keramahan','bff-e2':'Kebersamaan','bff-e3':'Asertivitas','bff-e4':'Tingkat Aktivitas','bff-e5':'Mencari Kegembiraan','bff-e6':'Keceriaan',
+    'bf-e-ctxt':'Asertivitas (14) adalah facet tertinggi — orang ini bisa berbicara dan memimpin saat dibutuhkan. Namun Keramahan (7) dan Kebersamaan (9) adalah yang terendah — kehangatan sosial kasual melelahkan, bukan menyegarkan. Koneksi bersifat selektif dan disengaja, tidak pernah otomatis.',
+    'bf-o-name':'Keterbukaan','bf-o-sub':'Kreativitas & Rasa Ingin Tahu',
+    'bff-o1':'Imajinasi','bff-o2':'Minat Artistik','bff-o3':'Emosionalitas','bff-o4':'Petualangan','bff-o5':'Intelek','bff-o6':'Liberalisme',
+    'bf-o-ctxt':'Intelek (17) dan Petualangan (16) memimpin — nafsu yang tak terpuaskan untuk menjelajahi ide dan eksplorasi melampaui hal-hal yang sudah jelas. Minat Artistik (14) dan Imajinasi (14) berjalan berdampingan. Menariknya, Liberalisme (9) paling rendah — kreatif dan penasaran, namun tetap berakar pada pandangan dunia yang berprinsip dan terstruktur.',
+    'bf-a-name':'Keramahan','bf-a-sub':'Empati & Kehangatan',
+    'bff-a1':'Kepercayaan','bff-a2':'Moralitas','bff-a3':'Altruisme','bff-a4':'Kerjasama','bff-a5':'Kesederhanaan','bff-a6':'Simpati',
+    'bf-a-ctxt':'Moralitas (19) hampir sempurna — facet tunggal tertinggi di semua dimensi. Altruisme (17), Kerjasama (16), dan Simpati (16) mengikuti dengan ketat. Ini bukan keramahan pasif; ini adalah kepedulian yang didorong etika. Kesederhanaan (10) lebih rendah — kepercayaan diri yang tenang yang tidak meminta maaf atas kompetensinya.',
+    'bf-c-name':'Ketelitian','bf-c-sub':'Disiplin & Keteraturan',
+    'bff-c1':'Self-Efficacy','bff-c2':'Keteraturan','bff-c3':'Kewajiban','bff-c4':'Dorongan Berprestasi','bff-c5':'Disiplin-Diri','bff-c6':'Kehati-hatian',
+    'bf-c-ctxt':'Self-Efficacy (18) adalah yang paling menonjol — kepercayaan sangat tinggi pada kemampuan diri sendiri untuk melaksanakan sesuatu. Kewajiban (17) dan Kehati-hatian (15) mengikuti. Yang berbeda: Keteraturan (9) rendah, menunjukkan ini bukan tentang kerapian atau ketertiban fisik, melainkan tentang menjadi andal, berprinsip, dan mampu dengan cara sendiri.',
+    'disc-lbl':'Penilaian DISC','disc-ttl':'Gaya Perilaku',
+    'disc-d-name':'Dominasi','disc-d-pct':'Graf III: −3 · Rendah','disc-d-desc':'Tidak mencari kekuasaan atau kontrol. Menghindari konfrontasi dan jarang memulai konflik langsung dengan orang lain.','disc-d-elab':'Dengan skor Most 4 dan Least 7, dominasi secara aktif dihindari, bukan sekadar tidak ada. Orang ini hanya menolak ketika nilai-nilainya jelas dipertaruhkan — dan bahkan saat itu, melakukannya dengan hati-hati dan pertimbangan, bukan dengan paksaan.',
+    'disc-i-name':'Pengaruh','disc-i-pct':'Graf III: −10 · Sangat Rendah','disc-i-desc':'Dimensi terendah. Tidak tertarik pada performa sosial, networking demi networking, atau energi keramaian.','disc-i-elab':'Most 0 dipadukan dengan Least 10 adalah salah satu kontras paling tajam yang mungkin ada — perilaku pencarian pengaruh secara konsisten ditolak. Koneksi, ketika terjadi, bersifat tenang dan satu-satu. Kedalaman di atas jangkauan, selalu.',
+    'disc-s-name':'Kestabilan','disc-s-pct':'Graf III: +3 · Sedang-Tinggi','disc-s-desc':'Sabar, konsisten, dan dapat diandalkan. Penstabil alami di lingkungan yang dinamis dan penuh tekanan.','disc-s-elab':'Kestabilan di +3 memberikan kehadiran yang tenang dan membumi. Di tengah kekacauan, orang ini menjadi jangkar — mengamati, memproses, lalu merespons daripada bereaksi. Tim mengandalkan konsistensi ini sebagai penyeimbang volatilitas.',
+    'disc-c-name':'Ketelitian','disc-c-pct':'Graf III: +8 · Dominan','disc-c-desc':'Dimensi tertinggi dan paling dominan. Berorientasi pada detail, berprinsip, dan sangat didorong oleh kualitas.','disc-c-elab':'Most 9 dan Least 1 — konsistensi hampir maksimum. C=8 pada Graf III mengonfirmasi ini sebagai dorongan perilaku inti yang sejati. Public Self (6), Private Self (7), dan Perceived Self (6.5) semuanya selaras: pola Perfeksionis bukan situasional. Ini adalah siapa mereka di semua konteks.',
+    'disc-iq':'Pola Klasik: SC — Sang Perfeksionis',
+    'disc-p1':'SC Perfeksionis adalah salah satu profil DISC yang paling konsisten secara internal. Ketelitian tinggi (C=+8) yang ditopang Kestabilan sedang (S=+3), dengan Dominasi dan Pengaruh keduanya ditekan. Orang ini berpikir sistematis, mengikuti prosedur, membutuhkan kondisi stabil, menghindari konflik, anti-kritik, lambat memutuskan, dan resistif terhadap perubahan mendadak. Mereka adalah tulang punggung yang diam dari tim mana pun — presisi, andal, dan menjaga diri serta pekerjaan mereka pada standar yang kebanyakan orang tidak akan coba.',
+    'ri-lbl':'RIASEC · Kode Holland','ri-ttl':'Profil Minat',
+    'ri-leg-a':'Artistik · 14','ri-leg-a-d':'Kreatif, intuitif, ekspresif',
+    'ri-leg-c':'Konvensional · 14','ri-leg-c-d':'Terstruktur, detail, tertib',
+    'ri-leg-i':'Investigatif · 13','ri-leg-i-d':'Analitis, intelektual, ilmiah',
+    'ri-leg-r':'Realistis · 12','ri-leg-r-d':'Praktis, teknis, manual',
+    'ri-leg-e':'Wirausaha · 12','ri-leg-e-d':'Kepemimpinan, persuasif',
+    'ri-leg-s':'Sosial · 11','ri-leg-s-d':'Membantu, empatik, kolaboratif',
+    'ri-a-l':'Artistik · 14','ri-a-t':'Kode co-dominan. Butuh ekspresi kreatif sebagai saluran — melalui menulis, desain, atau pemikiran konseptual. Menolak struktur kaku. Orisinal secara alami, mudah frustrasi di lingkungan yang menuntut konformitas murni daripada kreativitas.',
+    'ri-c-l':'Konvensional · 14','ri-c-t':'Kode co-dominan. Paradoks berdampingan Artistik — namun sangat koheren. Sisi Konvensional mendambakan ketertiban, akurasi, dan sistem. Bersama-sama, A+C menghasilkan seseorang yang berimajinasi dengan berani namun mengeksekusi dengan presisi dan disiplin.',
+    'ri-i-l':'Investigatif · 13','ri-i-t':'Kode sekunder yang kuat. Didorong oleh kebutuhan memahami bagaimana dan mengapa segala sesuatu bekerja. Tertarik pada riset, analisis, dan pemecahan masalah kompleks. Lebih memilih kedalaman daripada kecepatan, dan bukti daripada asumsi.',
+    'ri-r-l':'Realistis · 12','ri-r-t':'Hadir namun bukan utama. Mampu melakukan pekerjaan praktis dan membumi saat dibutuhkan — namun jarang menjadi sumber motivasi intrinsik. Lebih menyukai ide dan sistem daripada alat dan mesin.',
+    'ri-e-l':'Wirausaha · 12','ri-e-t':'Hadir namun bukan utama. Bisa memimpin dan meyakinkan saat tujuannya bermakna. Namun kepemimpinan demi status sendiri tidak menarik. Tidak termotivasi oleh jabatan atau dominasi kompetitif.',
+    'ri-s-l':'Sosial · 11','ri-s-t':'Skor terendah, namun benang humanistik tetap mengalir dalam. Meski skor minat Sosial rendah, empati tulus dan kepedulian terhadap orang lain tetap ada — hanya diekspresikan melalui karya dan ide, bukan pekerjaan sosial langsung.',
+    'ri-iq':'Kode Holland: ACi — Sistematist Kreatif',
+    'ri-p1':'Seri Artistik-Konvensional yang langka di puncak mengungkapkan seseorang yang hidup di persimpangan imajinasi dan presisi. Bukan satu atau yang lain — keduanya sekaligus. Tambahkan sekunder Investigatif dan Anda mendapat profil yang dibangun untuk pekerjaan kreatif berbasis riset: merancang sistem yang sekaligus indah dan ketat, menghasilkan output yang sekaligus orisinal dan teliti. Lingkungan ideal: desain UX/produk, penulisan teknis, visualisasi data, desain instruksional, komunikasi riset, atau bidang apa pun di mana pemikiran kreatif harus dieksekusi dengan disiplin sistematis.',
+    'en-lbl':'Enneagram','en-ttl':'Motivasi Inti','en-name':'Sang Ikonoklas',
+    'tag-1':'Menyendiri','tag-2':'Perseptif','tag-3':'Inovatif','tag-4':'Intens','tag-5':'Mandiri','tag-6':'Visioner',
+    'en-d':'Tipe 5 — digerakkan oleh kebutuhan untuk memahami. Sayap w4 menambahkan kedalaman emosional, kepekaan estetika, dan rasa identitas yang kuat. Orang ini mengumpulkan pengetahuan dengan rakus, memproses seorang diri, dan berbagi secara selektif — namun apa yang mereka bagikan cenderung sangat mendalam.',
+    'en-fear-lbl':'Ketakutan Inti','en-fear-txt':'Merasa tidak berdaya dan tidak mampu. Sangat khawatir kewalahan oleh tuntutan dunia tanpa cukup sumber daya batin untuk mengatasinya. Merespons dengan menarik diri dan mengumpulkan pengetahuan sebagai benteng pelindung.',
+    'en-des-lbl':'Keinginan Inti','en-des-txt':'Menjadi kapabel dan kompeten — memahami dunia cukup dalam untuk menavigasinya dengan percaya diri. Mendambakan penguasaan sejati: bukan pengetahuan permukaan, melainkan pemahaman komprehensif yang membuatnya benar-benar siap menghadapi apa pun.',
+    'en-wing-lbl':'Sayap w4','en-wing-txt':'Sayap Empat menambahkan kedalaman emosional, kepekaan estetika, dan rasa identitas yang kuat. Membuatnya lebih introspektif, artistik, dan sangat sadar akan dunia batinnya sendiri — berbeda dari Tipe 5 murni yang lebih analitis dan terlepas.',
+    'en-iq':'"Pikiran yang berpikir dengan cara yang belum pernah dipikirkan orang lain."',
+    'en-p1':'Enneagram 5w4 adalah tipe yang paling independen secara intelektual. Mereka membangun dunia batin yang rumit — kaya dengan ide, sistem, teori, dan visi kreatif — yang sering kali mereka rasa tidak bisa diakses atau dihargai sepenuhnya oleh orang lain. Mereka sekaligus paling mandiri dan paling penuh rasa ingin tahu dari semua tipe.',
+    'en-p2':'Jalur pertumbuhan mereka adalah belajar mempercayai bahwa mereka sudah cukup — cukup pengetahuan, cukup sumber daya, cukup untuk ditawarkan — dan melangkah keluar dari menara observasi menuju koneksi yang nyata. Transisi dari pengamat yang terlepas menjadi peserta yang hadir, tanpa kehilangan kedalaman, adalah pekerjaan seumur hidup mereka.',
+    'en-p3':'Dalam tekanan (bergerak menuju Tipe 7): tersebar, impulsif, gelisah. Dalam pertumbuhan (bergerak menuju Tipe 8): tegas, membumi, hadir dengan berani.',
+    'footer-sub':'Profil Kepribadian · Dibuat dengan penuh niat',
+    'dark-label':'Mode Gelap',
+    // SUMMARY
+    'sum-lbl':'Sintesis · Profil Lengkap','sum-ttl':'Siapa Irvan Maulana?',
+    'sum-p1':'Irvan adalah perpaduan langka dari kualitas-kualitas yang tampak bertentangan — pikiran yang sekaligus analitis dan artistik, sistematis dan imajinatif, penuh empati dan berprinsip teguh. Dari lima kerangka yang berbeda, satu gambaran muncul dengan konsistensi yang mencolok: seseorang yang berpikir mendalam, bertindak dari keyakinan, dan bergerak di dunia dengan tenang namun penuh intensitas batin yang luar biasa.',
+    'sum-p2':'Dia bukan orang yang langsung kamu perhatikan. Tapi dia adalah orang yang pemikirannya kamu ingat lama setelah percakapan berakhir — presisi, berlapis, dan selalu menunjuk pada sesuatu yang lebih besar dari permukaan. Dia membangun perlahan, dengan hati-hati, dan dengan perhatian luar biasa terhadap hal-hal yang benar-benar penting. Karyanya jarang mencolok, tapi hampir selalu luar biasa.',
+    'sum-mbti-desc':'Tipe paling langka. Visioner + Empatik + Perfeksionis turbulent.',
+    'sum-bf-desc':'Moralitas luar biasa, sangat kapabel, penasaran mendalam.',
+    'sum-disc-desc':'Perfeksionis. Sistematis, stabil, menghindari kebisingan sosial.',
+    'sum-ri-desc':'Kreatif-Sistematis. Berimajinasi berani, mengeksekusi presisi.',
+    'sum-en-desc':'Sang Ikonoklas. Pencari pengetahuan dengan kedalaman estetika.',
+    'sum-str-ttl':'Kekuatan','sum-wk-ttl':'Kelemahan',
+    's1t':'Integritas Luar Biasa','s1d':'Moralitas (19/20) hampir sempurna di Big Five — etika bukan strategi, melainkan fondasi. Ini membuat Irvan sangat dapat dipercaya dan konsisten dalam nilai-nilainya di semua konteks.',
+    's2t':'Pemikiran Sistemik + Kreatif','s2d':'Kode Holland ACi yang langka dipadukan dengan intuisi INFJ berarti dia bisa melihat gambaran besar sekaligus merancang jalan menuju ke sana — imajinatif di level makro, disiplin di level mikro.',
+    's3t':'Self-Efficacy Tinggi','s3d':'Self-Efficacy (18/20) adalah facet Ketelitian tertingginya — kepercayaan mendalam pada kemampuannya sendiri untuk memecahkan masalah. Bahkan dalam ketidakpastian, ini menjadi kekuatan penstabil.',
+    's4t':'Presisi di Bawah Tekanan','s4d':'DISC Kestabilan (+3) dipadukan Ketelitian tinggi (+8) berarti kualitas tidak menurun saat kondisi sulit. Dia menjadi lebih hati-hati, bukan lebih sembrono, di bawah tekanan.',
+    's5t':'Kedalaman Wawasan','s5d':'Intelek (17), Petualangan (16), dan dorongan 5w4 untuk memahami menciptakan pikiran yang luar biasa tajam — yang menemukan pola yang orang lain lewatkan dan menghubungkan titik-titik lintas disiplin.',
+    's6t':'Keandalan Berprinsip','s6d':'Dutifulness (17) + DISC Ketelitian = seseorang yang tidak perlu diawasi. Setelah berkomitmen, pekerjaan selesai — menyeluruh, benar, dan tanpa alasan.',
+    'w1t':'Kelelahan dari Terlalu Banyak Memberi','w1d':'Keramahan (91) + kecenderungan INFJ menyerap emosi orang lain + standar tinggi = seseorang yang memberi secara mendalam tapi memulihkan diri perlahan. Tanpa batasan yang disengaja, kelelahan menumpuk secara tak terlihat.',
+    'w2t':'Perfeksionisme sebagai Jebakan','w2d':'DISC Ketelitian (+8) + turbulence INFJ-T = seseorang yang bisa terjebak menyempurnakan pekerjaan yang sudah sangat bagus. "Cukup baik" jarang terasa cukup baik.',
+    'w3t':'Tingkat Kecemasan Tinggi','w3d':'Neurotisisme (78) dengan Kecemasan sebagai facet tertinggi (16/20) berarti kebisingan internal selalu tinggi — bahkan ketika tidak ada yang salah secara objektif. Ini menguras energi dan mendistorsi persepsi diri.',
+    'w4t':'Resistansi terhadap Perubahan Mendadak','w4d':'Pola DISC SC secara eksplisit mencakup anti-perubahan. Pergeseran tak terduga dalam lingkungan, rencana, atau hubungan dapat menyebabkan tekanan yang tidak proporsional dan kelumpuhan keputusan.',
+    'w5t':'Penarikan Sosial di Bawah Stres','w5d':'Pengaruh (−10) + kecenderungan isolasi Enneagram 5 + Neurotisisme = seseorang yang justru menarik diri ke dalam saat koneksi eksternal bisa paling membantu.',
+    'w6t':'Pengambilan Keputusan yang Lambat','w6d':'DISC Ketelitian dipadukan Kehati-hatian (15) dan Dominasi rendah berarti keputusan dipertimbangkan secara menyeluruh — terkadang terlalu menyeluruh. Dalam konteks yang bergerak cepat, kehati-hatian ini bisa terbaca sebagai kebimbangan.',
+    'sum-iq':'"Bukan suara yang paling keras di ruangan — tapi sering yang paling penting."',
+    'sum-close1':'Profil Irvan pada dasarnya adalah tentang kedalaman di atas keluasan, kualitas di atas kecepatan, dan prinsip di atas kenyamanan. Dia terbaik ketika diberi ruang untuk berpikir mendalam, bekerja secara mandiri pada masalah yang bermakna, dan beroperasi dalam sistem yang dipercayainya. Dia paling buruk dalam lingkungan kacau, penuh interaksi sosial, dan berubah cepat yang menuntut keputusan cepat dan interaksi permukaan.',
+    'sum-close2':'Konvergensi dari kelima kerangka sangat jarang terjadi: setiap tes menunjuk pada orang yang sama — seorang pemikir yang diam-diam intens, sangat etis, dan secara kreatif sistematis yang memegang dirinya pada standar yang kebanyakan orang bahkan tidak akan tetapkan. Tantangan terbesarnya bukan kemampuan — melainkan belajar mengerahkan kemampuan itu tanpa menguras dirinya sendiri dalam prosesnya.',
+  }
+};
+
+const root = document.documentElement;
+let lang = localStorage.getItem('lang') || 'en';
+let theme = localStorage.getItem('theme') || 'light';
+if (theme === 'dark') root.setAttribute('data-theme','dark');
+
+function applyLang(l, animate) {
+  const nodes = document.querySelectorAll('[data-t]');
+  const swap = el => { const v = T[l][el.dataset.t]; if (v !== undefined) el.textContent = v; };
+  if (animate) {
+    nodes.forEach(el => el.classList.add('swapping'));
+    setTimeout(() => { nodes.forEach(swap); updateRadarLabels(l); nodes.forEach(el => el.classList.remove('swapping')); }, 180);
+  } else { nodes.forEach(swap); updateRadarLabels(l); }
+  document.documentElement.lang = l;
+}
+
+const radarLabels = {
+  en: ['Realistic','Investigative','Artistic','Social','Enterprising','Conventional'],
+  id: ['Realistis','Investigatif','Artistik','Sosial','Wirausaha','Konvensional']
+};
+function updateRadarLabels(l) {
+  document.querySelectorAll('#radarChart text.r-lbl').forEach((t,i) => { if (radarLabels[l][i]) t.textContent = radarLabels[l][i]; });
+}
+
+const themeBtn = document.getElementById('themeBtn');
+const themeLabel = document.getElementById('themeLabel');
+function applyTheme(t) {
+  if (t === 'dark') { root.setAttribute('data-theme','dark'); themeBtn.classList.add('active'); }
+  else { root.removeAttribute('data-theme'); themeBtn.classList.remove('active'); }
+  themeLabel.textContent = t === 'dark' ? (lang === 'id' ? 'Mode Terang' : 'Light Mode') : (lang === 'id' ? 'Mode Gelap' : 'Dark Mode');
+}
+if (theme === 'dark') applyTheme('dark');
+themeBtn.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('theme', theme); applyTheme(theme); });
+
+const langBtn = document.getElementById('langBtn');
+const langLabel = document.getElementById('langLabel');
+function applyLangUI(l) {
+  if (l === 'id') { langBtn.classList.add('active'); langLabel.textContent = 'English'; langBtn.querySelector('.lang-flag').textContent = '🇬🇧'; }
+  else { langBtn.classList.remove('active'); langLabel.textContent = 'Bahasa Indonesia'; langBtn.querySelector('.lang-flag').textContent = '🇮🇩'; }
+  applyTheme(theme);
+}
+applyLang(lang, false);
+applyLangUI(lang);
+langBtn.addEventListener('click', () => { lang = lang === 'en' ? 'id' : 'en'; localStorage.setItem('lang', lang); applyLang(lang, true); applyLangUI(lang); });
+
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const bo = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.fill,.dc-fill,.bf-ffill').forEach(f => { requestAnimationFrame(() => setTimeout(() => { f.style.width = f.dataset.v + '%'; }, 120)); });
+    bo.unobserve(e.target);
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('section').forEach(s => bo.observe(s));
+
+(function () {
+  // Radar: order matches legend: A, C, I, R, E, S — mapped to RIASEC angles
+  // Standard RIASEC order for radar: R, I, A, S, E, C
+  const D = [{ v:.75 },{ v:.81 },{ v:.88 },{ v:.69 },{ v:.75 },{ v:.88 }]; // R=12,I=13,A=14,S=11,E=12,C=14 out of max~16
+  const N=D.length, R=92, svg=document.getElementById('radarChart');
+  const ns='http://www.w3.org/2000/svg';
+  const ang=i=>Math.PI*2*i/N-Math.PI/2;
+  const pt=(r,i)=>[r*Math.cos(ang(i)),r*Math.sin(ang(i))];
+  const mk=(tag,a)=>{const e=document.createElementNS(ns,tag);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  [.25,.5,.75,1].forEach(f=>svg.appendChild(mk('polygon',{class:'r-grid',points:Array.from({length:N},(_,i)=>pt(R*f,i).join(',')).join(' ')})));
+  D.forEach((_,i)=>{const[x,y]=pt(R,i);svg.appendChild(mk('line',{class:'r-axis',x2:x,y2:y}));});
+  const lbls=radarLabels[lang];
+  D.forEach((_,i)=>{const[x,y]=pt(R+19,i);const t=mk('text',{class:'r-lbl',x,y:y+4,'text-anchor':Math.abs(x)<8?'middle':x>0?'start':'end'});t.textContent=lbls[i];svg.appendChild(t);});
+  const area=mk('polygon',{class:'r-area',points:'0,0'});svg.appendChild(area);
+  const dots=D.map(()=>{const c=mk('circle',{class:'r-dot',r:3,cx:0,cy:0});svg.appendChild(c);return c;});
+  const ro=new IntersectionObserver(es=>{
+    if(!es[0].isIntersecting)return;
+    const t0=performance.now(),dur=1050;
+    const frame=now=>{
+      const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+      area.setAttribute('points',D.map((d,i)=>pt(R*d.v*e,i).join(',')).join(' '));
+      D.forEach((d,i)=>{const[x,y]=pt(R*d.v*e,i);dots[i].setAttribute('cx',x);dots[i].setAttribute('cy',y);});
+      if(p<1)requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+    ro.disconnect();
+  },{threshold:.25});
+  ro.observe(svg);
+})();
+</script>
+</body>
+</html>
